@@ -7,7 +7,15 @@ import { RowComponent } from './row.component';
 import { SuperPowersComponent } from './superpowers.component';
 import { RichComponent } from './rich.component';
 import { GeniousComponent } from './genious.component';
-import appRoutes from '../app.routes';
+
+import { RouterModule } from '@angular/router';
+
+const routes = [
+  {path: '', component: HomeComponent},
+  {path: 'sp', component: SuperPowersComponent},
+  {path: 'rich', component: RichComponent},
+  {path: 'genious', component: GeniousComponent},
+];
 
 @NgModule({
   declarations: [
@@ -18,7 +26,7 @@ import appRoutes from '../app.routes';
     TableComponent,
     RowComponent
   ],
-  imports:[CommonModule, FormsModule, appRoutes],
+  imports:[CommonModule, FormsModule, RouterModule.forRoot(routes)],
   exports:[HomeComponent, SuperPowersComponent, RichComponent, GeniousComponent, TableComponent, RowComponent]
 })
 export class TableModule { }
