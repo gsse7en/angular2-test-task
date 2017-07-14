@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TableModule } from './table/table.module';
+import { RouterModule } from '@angular/router';
 
 import { PersonsService } from './persons.service';
 
@@ -21,6 +22,7 @@ import { FilterComponent } from './filter/filter.component';
     BrowserModule, 
     FormsModule, 
     TableModule,
+    RouterModule
   ],
   providers: [PersonsService],
   bootstrap: [AppComponent]

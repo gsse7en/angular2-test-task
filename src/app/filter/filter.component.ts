@@ -3,27 +3,8 @@ import { PersonsService } from '../persons.service';
 
 @Component({
   selector: 'app-filter',
-  template: `
-    <p>
-      Filters:
-      <a href="/sp" [class]="checkAttributInPersons('hasSuperPowers')?'':'inactive'">Super Power</a>
-      <a href="/rich" [class]="checkAttributInPersons('rich')?'':'inactive'">Rich</a>
-      <a href="/genious" [class]="checkAttributInPersons('genious')?'':'inactive'">Genious</a>
-    </p>
-  `,
-  styles: [`
-    a {
-      margin-left: 15px;
-      color: SteelBlue;
-      text-decoration: none;
-    }
-
-    .inactive {
-      color: #ddd;
-      pointer-events: none;
-      cursor: default;
-    }
-  `]
+  templateUrl: "filter.component.html",
+  styleUrls: ["filter.component.css"]
 })
 export class FilterComponent {
 

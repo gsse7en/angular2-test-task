@@ -3,29 +3,8 @@ import { PersonsService } from '../persons.service';
 
 @Component({
   selector: 'app-total',
-  template: `
-    <a href="/">
-      <h1>
-        Total:
-      </h1>
-      <h3>TotalPersons: {{persons.persons.length}}</h3>
-    </a>
-    <a href="/sp">
-      <h4>with SuperPower {{countAttributes('hasSuperPowers')}}</h4>
-    </a>
-    <a href="/rich">
-      <h4>Rich {{countAttributes('rich')}}</h4>
-    </a>
-    <a href="/genious">
-      <h4>Genious {{countAttributes('genious')}}</h4>
-    </a>
-  `,
-  styles: [`
-    a {
-      color: black;
-      text-decoration: none;
-    }
-  `]
+  templateUrl: "total.component.html",
+  styleUrls: ["total.component.css"]
 })
 export class TotalComponent {
   countAttributes(attribute) {

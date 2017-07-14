@@ -1,0 +1,33 @@
+:host >>> table {
+  border-collapse: collapse;
+}
+
+:host >>> th {
+  border: 1px solid #bbb;
+  padding-right:40px;
+}
+
+:host >>> th:not(:last-child) {
+  cursor: pointer;
+}
+
+#confirm {
+  position: fixed;
+  top:40vh;
+  left:40vw;
+  border: 1px solid black;
+  z-index:3;
+  padding: 20px;
+  margin: 20px;
+  background-color:#fefefe;
+}
+
+    #cover{
+  position:fixed;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,0.6);
+  z-index:1;
+  width:100%;
+  height:100%;
+}

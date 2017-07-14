@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="main">
+    <div class="add">
+      <app-add></app-add>
+    </div>
+    <div class="table">
+      <app-table *ngIf="length()"></app-table>
+    </div>
+    <div class="filter">
+      <app-filter *ngIf="length()"></app-filter>
+    </div>
+  </div>
+  <div class="sidebar">
+    <app-total></app-total>
+  </div>
+</div> 

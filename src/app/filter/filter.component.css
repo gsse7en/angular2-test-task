@@ -1,0 +1,11 @@
+a {
+    margin-left: 15px;
+    color: SteelBlue;
+    text-decoration: none;
+}
+
+.inactive {
+    color: #ddd;
+    pointer-events: none;
+    cursor: default;
+}

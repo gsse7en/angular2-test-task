@@ -4,50 +4,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
-  template: `
-    <h1>Add New Person</h1>
-    <form #addPersonForm="ngForm" (ngSubmit)="addPerson(addPersonForm.value)">
-      <input 
-        type="text" 
-        name="name" 
-        [(ngModel)]="personName" 
-        placeholder="Enter name">
-
-      <input 
-        type="checkbox" 
-        id="hasSuperPowers" 
-        name="hasSuperPowers"  
-        [ngModel]="this.persons.currentAttribute === 'hasSuperPowers'"
-        (change)="getCheckboxChange($event, 'hasSuperPowers')">
-
-      <label for="hasSuperPowers">Super Powers</label>
-
-      <input 
-        type="checkbox" 
-        id="rich" 
-        name="rich" 
-        [ngModel]="this.persons.currentAttribute === 'rich'"
-        (change)="getCheckboxChange($event, 'rich')">
-
-      <label for="rich">Rich</label>
-
-      <input 
-        type="checkbox" 
-        id="genious" 
-        name="genious" 
-        [ngModel]="this.persons.currentAttribute === 'genious'"
-        (change)="getCheckboxChange($event, 'genious')">
-
-      <label for="genious">Genious</label>
-
-      <button type="submit">Add</button>
-    </form>
-  `,
-  styles: [`
-    form {
-      margin-bottom: 20px;
-    }
-  `]
+  templateUrl: "add.component.html",
+  styleUrls: ["add.component.css"]
 })
 export class AddComponent {
 
