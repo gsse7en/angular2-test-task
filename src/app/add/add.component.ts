@@ -7,23 +7,36 @@ import { Router } from '@angular/router';
   template: `
     <h1>Add New Person</h1>
     <form #addPersonForm="ngForm" (ngSubmit)="addPerson(addPersonForm.value)">
-      <input type="text" name="name" [(ngModel)]="personname" placeholder="Enter name">
+      <input 
+        type="text" 
+        name="name" 
+        [(ngModel)]="personName" 
+        placeholder="Enter name">
 
-      <input type="checkbox" id="hasSuperPowers" name="hasSuperPowers"  
-      [ngModel]="checkAttribute(this.persons.currentAttribute, 'hasSuperPowers')"
-      (change)="getChange($event, 'hasSuperPowers')">
+      <input 
+        type="checkbox" 
+        id="hasSuperPowers" 
+        name="hasSuperPowers"  
+        [ngModel]="this.persons.currentAttribute === 'hasSuperPowers'"
+        (change)="getCheckboxChange($event, 'hasSuperPowers')">
 
       <label for="hasSuperPowers">Super Powers</label>
 
-      <input type="checkbox" id="rich" name="rich" 
-      [ngModel]="checkAttribute(this.persons.currentAttribute, 'rich')"
-      (change)="getChange($event, 'rich')">
+      <input 
+        type="checkbox" 
+        id="rich" 
+        name="rich" 
+        [ngModel]="this.persons.currentAttribute === 'rich'"
+        (change)="getCheckboxChange($event, 'rich')">
 
       <label for="rich">Rich</label>
 
-      <input type="checkbox" id="genious" name="genious" 
-      [ngModel]="checkAttribute(this.persons.currentAttribute, 'genious')"
-      (change)="getChange($event, 'genious')">
+      <input 
+        type="checkbox" 
+        id="genious" 
+        name="genious" 
+        [ngModel]="this.persons.currentAttribute === 'genious'"
+        (change)="getCheckboxChange($event, 'genious')">
 
       <label for="genious">Genious</label>
 
@@ -44,15 +57,11 @@ export class AddComponent {
       genious:Boolean
   }
   
-  getChange(ev, value) {
+  getCheckboxChange(ev, value) {
     this.state[value] = ev.target.checked;
   }
 
-  checkAttribute(current,name){
-    return current===name;
-  }
-
-  checkAttributeBeforeSubmit(val) {
+  checkCurrentAttributeCheckboxStateBeforeSubmit(val) {
     if (val) {
       if (!this.state[val]) {
         this.router.navigate(['/']);
@@ -60,15 +69,15 @@ export class AddComponent {
     }
   }
 
-  personname = '';
+  personName = '';
 
   addPerson(person) {
     this.persons.persons = JSON.parse(localStorage["persons"]);
     person.id = this.persons.persons.length;
     this.persons.persons.push(person);
     localStorage["persons"] = JSON.stringify(this.persons.persons);
-    this.checkAttributeBeforeSubmit(this.persons.currentAttribute);
-    this.personname='';
+    this.checkCurrentAttributeCheckboxStateBeforeSubmit(this.persons.currentAttribute);
+    this.personName='';
   }
 
   constructor(private persons:PersonsService, private router:Router) { }

@@ -25,7 +25,7 @@ export class RowComponent {
   @Output() updateAttribute = new EventEmitter();
   @Output() deletePersonEvent = new EventEmitter();
 
-  deletePersonInit(id){
+  deletePersonInit(id) {
     this.deletePersonEvent.emit(this.person.id);
   }
 

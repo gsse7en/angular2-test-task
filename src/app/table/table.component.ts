@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   selector: 'app-table',
   template: `
     <router-outlet></router-outlet>
-    <div id="cover" *ngIf="this.popup" (click)="onClick($event)">
+    <div id="cover" *ngIf="this.popup" (click)="clickOutsidePopup($event)">
       <div id="confirm" >
         <h2>confirm delete action</h2>
         <button (click)="erasePerson(this.id)">ok</button><button (click)="this.popup=false">cancel</button>
@@ -14,7 +14,7 @@ import { Injectable } from '@angular/core';
     </div>
   `,
   styles: [`
-    :host >>> table{
+    :host >>> table {
       border-collapse: collapse;
     }
     :host >>> th {
@@ -51,12 +51,15 @@ export class TableComponent implements OnInit {
   popup:Boolean = false;
   id:Number;
 
-  onClick(event) {
-    if (!event.path.some(function(el) {return el.id === 'confirm';})) {this.popup=false}
+  clickOutsidePopup(click) {
+    if (!click.path.some(function(element) {return element.id === 'confirm';})) 
+      {
+        this.popup=false;
+      }
   }
 
   erasePerson(id) {
-    this.persons.persons.splice(id, 1);
+    this.persons.persons.splice(this.persons.persons.findIndex(person => person.id === id), 1); 
     this.persons.persons = this.persons.persons.map(person=> { 
       if (person.id > id) {
         --person.id; 
@@ -68,13 +71,11 @@ export class TableComponent implements OnInit {
   }
 
   deletePersonInit(id) {
-    if (!this.popup) {
-      this.popup = true;
-      this.id = id;
-    }     
+    this.popup = true;
+    this.id = id;
   }
 
-  onUpdate(event) {
+  onAttributeUpdate(event) {
     this.persons.persons = this.persons.persons.map(person => person.id === event.id? event : person);
     localStorage["persons"] = JSON.stringify(this.persons.persons);
   }
@@ -83,13 +84,13 @@ export class TableComponent implements OnInit {
     this.persons.persons = JSON.parse(localStorage["persons"]);
   }
 
-  checkAttributInPersons(attribute) {
+  checkAttributeInPersons(attribute) {
     return this.persons.persons.some(person=> person[attribute])
   }
 
   reversed: boolean = true;
 
-  sortByName(attribute) {
+  sortBy(attribute) {
     const that = this;
     this.reversed = !this.reversed;
     this.persons.persons.sort(function(a,b){

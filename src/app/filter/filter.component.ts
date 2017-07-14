@@ -23,7 +23,6 @@ import { PersonsService } from '../persons.service';
       pointer-events: none;
       cursor: default;
     }
-
   `]
 })
 export class FilterComponent {

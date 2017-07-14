@@ -4,23 +4,23 @@ import { TableComponent } from './table.component';
 
 @Component({
   template: `
-<table *ngIf="table.checkAttributInPersons('rich')">
+<table *ngIf="table.checkAttributeInPersons('rich')">
   <thead>
     <tr>
-      <th (click)="table.sortByName('name')">Name</th>
-      <th (click)="table.sortByName('hasSuperPowers')">SuperPower</th>
-      <th (click)="table.sortByName('rich')">Rich</th>
-      <th (click)="table.sortByName('genious')">Genious</th>
+      <th (click)="table.sortBy('name')">Name</th>
+      <th (click)="table.sortBy('hasSuperPowers')">SuperPower</th>
+      <th (click)="table.sortBy('rich')">Rich</th>
+      <th (click)="table.sortBy('genious')">Genious</th>
       <th>Delete</th>
     </tr>
   </thead>
   <tbody>
-    <ng-container *ngFor="let person of persons.persons; let i = index">
+    <ng-container *ngFor="let person of persons.persons">
       <tr 
         person-row 
          *ngIf="person.rich"
         [person]="person"
-        (updateAttribute)="table.onUpdate($event)"
+        (updateAttribute)="table.onAttributeUpdate($event)"
         (deletePersonEvent)="table.deletePersonInit($event)"
       ></tr>
      </ng-container>

@@ -11,13 +11,13 @@ import { PersonsService } from '../persons.service';
       <h3>TotalPersons: {{persons.persons.length}}</h3>
     </a>
     <a href="/sp">
-      <h4>with SuperPower {{countAbilities('hasSuperPowers')}}</h4>
+      <h4>with SuperPower {{countAttributes('hasSuperPowers')}}</h4>
     </a>
     <a href="/rich">
-      <h4>Rich {{countAbilities('rich')}}</h4>
+      <h4>Rich {{countAttributes('rich')}}</h4>
     </a>
     <a href="/genious">
-      <h4>Genious {{countAbilities('genious')}}</h4>
+      <h4>Genious {{countAttributes('genious')}}</h4>
     </a>
   `,
   styles: [`
@@ -28,8 +28,8 @@ import { PersonsService } from '../persons.service';
   `]
 })
 export class TotalComponent {
-  countAbilities(ability) {
-    return this.persons.persons.filter((person)=> person[ability]).length;
+  countAttributes(attribute) {
+    return this.persons.persons.filter((person)=> person[attribute]).length;
   }  
 
   constructor(private persons:PersonsService) { }
