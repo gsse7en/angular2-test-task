@@ -3,14 +3,14 @@ import { PersonsService } from '../persons.service';
 
 @Component({
   selector: 'app-total',
-  templateUrl: "total.component.html",
-  styleUrls: ["total.component.css"]
+  templateUrl: 'total.component.html',
+  styleUrls: ['total.component.css']
 })
 export class TotalComponent {
   countAttributes(attribute) {
-    return this.persons.persons.filter((person)=> person[attribute]).length;
-  }  
+    return this.persons.persons.filter((person) => person[attribute]).length;
+  }
 
-  constructor(private persons:PersonsService) { }
+  constructor(private persons: PersonsService) { }
 
 }

@@ -19,14 +19,14 @@ const routes = [
 
 @NgModule({
   declarations: [
-  	HomeComponent,
-  	SuperPowersComponent,
-  	RichComponent,
-  	GeniousComponent,
+    HomeComponent,
+    SuperPowersComponent,
+    RichComponent,
+    GeniousComponent,
     TableComponent,
     RowComponent
   ],
-  imports:[CommonModule, FormsModule, RouterModule.forRoot(routes)],
-  exports:[HomeComponent, SuperPowersComponent, RichComponent, GeniousComponent, TableComponent, RowComponent]
+  imports: [CommonModule, FormsModule, RouterModule.forRoot(routes)],
+  exports: [HomeComponent, SuperPowersComponent, RichComponent, GeniousComponent, TableComponent, RowComponent]
 })
 export class TableModule { }

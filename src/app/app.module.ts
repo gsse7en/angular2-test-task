@@ -19,8 +19,8 @@ import { FilterComponent } from './filter/filter.component';
     FilterComponent
   ],
   imports: [
-    BrowserModule, 
-    FormsModule, 
+    BrowserModule,
+    FormsModule,
     TableModule,
     RouterModule
   ],

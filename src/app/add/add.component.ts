@@ -4,17 +4,19 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
-  templateUrl: "add.component.html",
-  styleUrls: ["add.component.css"]
+  templateUrl: 'add.component.html',
+  styleUrls: ['add.component.css']
 })
 export class AddComponent {
 
   state = {
-      hasSuperPowers:Boolean,
-      rich:Boolean,
-      genious:Boolean
+      hasSuperPowers: Boolean,
+      rich: Boolean,
+      genious: Boolean
   }
-  
+
+  personName = '';
+
   getCheckboxChange(ev, value) {
     this.state[value] = ev.target.checked;
   }
@@ -27,17 +29,15 @@ export class AddComponent {
     }
   }
 
-  personName = '';
-
   addPerson(person) {
-    this.persons.persons = JSON.parse(localStorage["persons"]);
+    this.persons.persons = JSON.parse(localStorage['persons']);
     person.id = this.persons.persons.length;
     this.persons.persons.push(person);
-    localStorage["persons"] = JSON.stringify(this.persons.persons);
+    localStorage['persons'] = JSON.stringify(this.persons.persons);
     this.checkCurrentAttributeCheckboxStateBeforeSubmit(this.persons.currentAttribute);
-    this.personName='';
+    this.personName = '';
   }
 
-  constructor(private persons:PersonsService, private router:Router) { }
+  constructor(private persons: PersonsService, private router: Router) { }
 
 }

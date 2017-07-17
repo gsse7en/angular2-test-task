@@ -2,8 +2,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: '[person-row]',
-  templateUrl: "row.component.html",
-  styleUrls: ["row.component.css"]
+  templateUrl: 'row.component.html',
+  styleUrls: ['row.component.css']
 })
 export class RowComponent {
   @Input() person
@@ -15,7 +15,7 @@ export class RowComponent {
     this.deletePersonEvent.emit(this.person.id);
   }
 
-  attributeChanged(ev,attribute) {
+  attributeChanged(ev, attribute) {
     this.person[attribute] = ev;
     this.updateAttribute.emit(this.person);
   }

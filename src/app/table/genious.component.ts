@@ -3,13 +3,13 @@ import { PersonsService } from '../persons.service';
 import { TableComponent } from './table.component';
 
 @Component({
-  templateUrl: "genious.component.html"
+  templateUrl: 'genious.component.html'
 })
 export class GeniousComponent implements OnInit {
 
-  constructor(private persons:PersonsService, private table:TableComponent) { }
-  
+  constructor(private persons: PersonsService, private table: TableComponent) { }
+
   ngOnInit() {
-    this.persons.currentAttribute='genious';
+    this.persons.currentAttribute = 'genious';
   }
 }
