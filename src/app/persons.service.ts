@@ -4,18 +4,17 @@ import { Router } from '@angular/router';
 @Injectable()
 export class PersonsService {
   persons = [];
-  currentAttribute = '';
+
   state = {
-      hasSuperPowers: Boolean,
-      rich: Boolean,
-      genious: Boolean
+    hasSuperPowers: Boolean,
+    rich: Boolean,
+    genious: Boolean,
+    id: Number,
+    personName: '',
+    currentAttribute: '',
+    popup: false,
+    reversed: true
   }
-
-  personName = '';
-
-  popup: Boolean = false;
-  id: Number;
-  reversed: Boolean = true;
 
   length() {
     if (!localStorage['persons']) {
@@ -49,13 +48,13 @@ export class PersonsService {
     person.id = this.persons.length;
     this.persons.push(person);
     localStorage['persons'] = JSON.stringify(this.persons);
-    this.checkCurrentAttributeCheckboxStateBeforeSubmit(this.currentAttribute);
-    this.personName = '';
+    this.checkCurrentAttributeCheckboxStateBeforeSubmit(this.state.currentAttribute);
+    this.state.personName = '';
   }
 
   clickOutsidePopup(click) {
     if (!click.path.some(function(element) {return element.id === 'confirm'; })) {
-        this.popup = false;
+        this.state.popup = false;
       }
   }
 
@@ -68,12 +67,12 @@ export class PersonsService {
       return person});
 
     localStorage['persons'] = JSON.stringify(this.persons);
-    this.popup = false;
+    this.state.popup = false;
   }
 
   deletePersonInit(id) {
-    this.popup = true;
-    this.id = id;
+    this.state.popup = true;
+    this.state.id = id;
   }
 
   onAttributeUpdate(event) {
@@ -91,9 +90,9 @@ export class PersonsService {
 
   sortBy(attribute) {
     const that = this;
-    this.reversed = !this.reversed;
+    this.state.reversed = !this.state.reversed;
     this.persons.sort(function(a, b){
-          return (a[attribute] === b[attribute] ? 0 : a[attribute] < b[attribute] ? -1 : 1) * (that.reversed ? -1 : 1);
+          return (a[attribute] === b[attribute] ? 0 : a[attribute] < b[attribute] ? -1 : 1) * (that.state.reversed ? -1 : 1);
     });
   }
 

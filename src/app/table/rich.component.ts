@@ -4,12 +4,13 @@ import { PersonsService } from '../persons.service';
 @Component({
   templateUrl: 'rich.component.html'
 })
+
 export class RichComponent implements OnInit {
 
   constructor(private persons: PersonsService) { }
 
   ngOnInit() {
-    this.persons.currentAttribute = 'rich';
+    this.persons.state.currentAttribute = 'rich';
   }
 
 }

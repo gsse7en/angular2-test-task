@@ -27,7 +27,20 @@ const routes = [
     RowComponent,
     TableTemplateComponent
   ],
-  imports: [CommonModule, FormsModule, RouterModule.forRoot(routes)],
-  exports: [HomeComponent, SuperPowersComponent, RichComponent, GeniousComponent, TableComponent, RowComponent, TableTemplateComponent]
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    HomeComponent,
+    SuperPowersComponent,
+    RichComponent,
+    GeniousComponent,
+    TableComponent,
+    RowComponent,
+    TableTemplateComponent
+  ]
 })
+
 export class TableModule { }

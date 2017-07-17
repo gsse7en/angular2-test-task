@@ -27,4 +27,5 @@ import { FilterComponent } from './filter/filter.component';
   providers: [PersonsService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

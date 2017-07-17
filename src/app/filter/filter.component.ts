@@ -6,6 +6,7 @@ import { PersonsService } from '../persons.service';
   templateUrl: 'filter.component.html',
   styleUrls: ['filter.component.css']
 })
+
 export class FilterComponent {
 
   constructor(private persons: PersonsService) { }

@@ -5,6 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: 'row.component.html',
   styleUrls: ['row.component.css']
 })
+
 export class RowComponent {
   @Input() person
 

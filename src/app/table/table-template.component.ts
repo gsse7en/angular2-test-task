@@ -5,6 +5,7 @@ import { PersonsService } from '../persons.service';
   selector: 'app-table-template',
   templateUrl: 'table-template.component.html'
 })
+
 export class TableTemplateComponent {
 
   @Input() attributeData;

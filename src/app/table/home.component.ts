@@ -4,6 +4,7 @@ import { PersonsService } from '../persons.service';
 @Component({
   templateUrl: 'home.component.html'
 })
+
 export class HomeComponent {
 
   constructor(private persons: PersonsService) {}
