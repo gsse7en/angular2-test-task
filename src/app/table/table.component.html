@@ -1,7 +1,7 @@
 <router-outlet></router-outlet>
-<div id="cover" *ngIf="this.popup" (click)="clickOutsidePopup($event)">
+<div id="cover" *ngIf="persons.popup" (click)="persons.clickOutsidePopup($event)">
   <div id="confirm" >
     <h2>confirm delete action</h2>
-    <button (click)="erasePerson(this.id)">ok</button><button (click)="this.popup=false">cancel</button>
+    <button (click)="persons.erasePerson(persons.id)">ok</button><button (click)="persons.popup=false">cancel</button>
   </div>
 </div>

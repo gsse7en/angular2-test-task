@@ -8,10 +8,6 @@ import { PersonsService } from '../persons.service';
 })
 export class FilterComponent {
 
-  checkAttributInPersons(attribute) {
-    return this.persons.persons.some(person => person[attribute])
-  }
-
   constructor(private persons: PersonsService) { }
 
 }

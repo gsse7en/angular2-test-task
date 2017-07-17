@@ -6,10 +6,8 @@ import { PersonsService } from '../persons.service';
   templateUrl: 'total.component.html',
   styleUrls: ['total.component.css']
 })
+
 export class TotalComponent {
-  countAttributes(attribute) {
-    return this.persons.persons.filter((person) => person[attribute]).length;
-  }
 
   constructor(private persons: PersonsService) { }
 

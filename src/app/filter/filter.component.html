@@ -1,6 +1,6 @@
 <p>
     Filters:
-    <a routerLink="/sp" [ngClass]="{inactive:!checkAttributInPersons('hasSuperPowers')}">Super Power</a>
-    <a routerLink="/rich" [ngClass]="{inactive:!checkAttributInPersons('rich')}">Rich</a>
-    <a routerLink="/genious" [ngClass]="{inactive:!checkAttributInPersons('genious')}">Genious</a>
+    <a routerLink="/sp" [ngClass]="{inactive:!persons.checkAttributInPersons('hasSuperPowers')}">Super Power</a>
+    <a routerLink="/rich" [ngClass]="{inactive:!persons.checkAttributInPersons('rich')}">Rich</a>
+    <a routerLink="/genious" [ngClass]="{inactive:!persons.checkAttributInPersons('genious')}">Genious</a>
 </p>

@@ -1,10 +1,10 @@
-<table *ngIf="table.checkAttributeInPersons(attributeData.attribute)||attributeData.isHomePage">
+<table *ngIf="persons.checkAttributeInPersons(attributeData.attribute)||attributeData.isHomePage">
   <thead>
     <tr>
-      <th (click)="table.sortBy('name')">Name</th>
-      <th (click)="table.sortBy('hasSuperPowers')">SuperPower</th>
-      <th (click)="table.sortBy('rich')">Rich</th>
-      <th (click)="table.sortBy('genious')">Genious</th>
+      <th (click)="persons.sortBy('name')">Name</th>
+      <th (click)="persons.sortBy('hasSuperPowers')">SuperPower</th>
+      <th (click)="persons.sortBy('rich')">Rich</th>
+      <th (click)="persons.sortBy('genious')">Genious</th>
       <th>Delete</th>
     </tr>
   </thead>
@@ -14,8 +14,8 @@
         person-row 
         *ngIf="person[attributeData.attribute]||attributeData.isHomePage" 
         [person]="person"
-        (updateAttribute)="table.onAttributeUpdate($event)"
-        (deletePersonEvent)="table.deletePersonInit($event)"
+        (updateAttribute)="persons.onAttributeUpdate($event)"
+        (deletePersonEvent)="persons.deletePersonInit($event)"
       ></tr>
     </ng-container>
   </tbody>
