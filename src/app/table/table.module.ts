@@ -8,7 +8,7 @@ import { RowComponent } from './row.component';
 import { SuperPowersComponent } from './superpowers.component';
 import { RichComponent } from './rich.component';
 import { GeniousComponent } from './genious.component';
-
+import { TableTemplateComponent } from './table-template.component';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -24,9 +24,10 @@ const routes = [
     RichComponent,
     GeniousComponent,
     TableComponent,
-    RowComponent
+    RowComponent,
+    TableTemplateComponent
   ],
   imports: [CommonModule, FormsModule, RouterModule.forRoot(routes)],
-  exports: [HomeComponent, SuperPowersComponent, RichComponent, GeniousComponent, TableComponent, RowComponent]
+  exports: [HomeComponent, SuperPowersComponent, RichComponent, GeniousComponent, TableComponent, RowComponent, TableTemplateComponent]
 })
 export class TableModule { }
