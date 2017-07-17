@@ -1,4 +1,4 @@
-<table>
+<table *ngIf="true">
   <thead>
     <tr>
       <th (click)="table.sortBy('name')">Name</th>
@@ -9,12 +9,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr 
-      person-row 
-      *ngFor="let person of persons.persons" 
-      [person]="person"
-      (updateAttribute)="table.onAttributeUpdate($event)"
-      (deletePersonEvent)="table.deletePersonInit($event)"
-    ></tr>
+    <ng-container *ngFor="let person of persons.persons">
+      <tr 
+        person-row 
+        *ngIf="true" 
+        [person]="person"
+        (updateAttribute)="table.onAttributeUpdate($event)"
+        (deletePersonEvent)="table.deletePersonInit($event)"
+      ></tr>
+    </ng-container>
   </tbody>
 </table>

@@ -8,13 +8,6 @@ import { PersonsService } from './persons.service';
 })
 export class AppComponent {
 
-  length() {
-    if (!localStorage['persons']) {
-      localStorage['persons'] = '[]';
-    }
-    return JSON.parse(localStorage['persons']).length;
-  }
-
   constructor(private persons: PersonsService) {}
 
 }

@@ -12,11 +12,11 @@
     <ng-container *ngFor="let person of persons.persons">
       <tr 
         person-row 
-         *ngIf="person.hasSuperPowers"
+        *ngIf="person.hasSuperPowers"
         [person]="person"
         (updateAttribute)="table.onAttributeUpdate($event)"
         (deletePersonEvent)="table.deletePersonInit($event)"
       ></tr>
-     </ng-container>
+    </ng-container>
   </tbody>
 </table>
