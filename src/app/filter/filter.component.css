@@ -4,8 +4,14 @@ a {
     text-decoration: none;
 }
 
+.active {
+    color: FireBrick;
+    font-weight: bold;
+}
+
 .inactive {
     color: #ddd;
     pointer-events: none;
     cursor: default;
 }
+
