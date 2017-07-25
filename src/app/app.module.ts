@@ -7,16 +7,16 @@ import { RouterModule } from '@angular/router';
 import { PersonsService } from './persons.service';
 
 import { AppComponent } from './app.component';
-import { AddComponent } from './add/add.component';
 import { TotalComponent } from './total/total.component';
 import { FilterComponent } from './filter/filter.component';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddComponent,
     TotalComponent,
-    FilterComponent
+    FilterComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,

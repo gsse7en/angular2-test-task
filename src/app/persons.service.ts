@@ -31,6 +31,10 @@ export class PersonsService {
     return this.persons.some(person => person[attribute])
   }
 
+  checkCurrentAttribute(attribute) {
+    return this.state.currentAttribute === attribute;
+  }
+
   getCheckboxChange(ev, value) {
     this.state[value] = ev.target.checked;
   }

@@ -4,12 +4,12 @@
     </h1>
     <h3>TotalPersons: {{persons.persons.length}}</h3>
     </a>
-    <a routerLink="/sp">
+    <a routerLink="sp" (click)="persons.state.currentAttribute = 'hasSuperPowers'">
         <h4>with SuperPower {{persons.countAttributes('hasSuperPowers')}}</h4>
     </a>
-    <a routerLink="/rich">
+    <a routerLink="rich" (click)="persons.state.currentAttribute = 'rich'">
         <h4>Rich {{persons.countAttributes('rich')}}</h4>
     </a>
-    <a routerLink="/genious">
+    <a routerLink="genious" (click)="persons.state.currentAttribute = 'genious'">
         <h4>Genious {{persons.countAttributes('genious')}}</h4>
 </a>

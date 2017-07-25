@@ -10,7 +10,7 @@
         type="checkbox" 
         id="hasSuperPowers" 
         name="hasSuperPowers"  
-        [ngModel]="persons.state.currentAttribute === 'hasSuperPowers'"
+        [ngModel]="persons.checkCurrentAttribute('hasSuperPowers')"
         (change)="persons.getCheckboxChange($event, 'hasSuperPowers')">
 
       <label for="hasSuperPowers">Super Powers</label>
@@ -19,7 +19,7 @@
         type="checkbox" 
         id="rich" 
         name="rich" 
-        [ngModel]="persons.state.currentAttribute === 'rich'"
+        [ngModel]="persons.checkCurrentAttribute('rich')"
         (change)="persons.getCheckboxChange($event, 'rich')">
 
       <label for="rich">Rich</label>
@@ -28,7 +28,7 @@
         type="checkbox" 
         id="genious" 
         name="genious" 
-        [ngModel]="persons.state.currentAttribute === 'genious'"
+        [ngModel]="persons.checkCurrentAttribute('genious')"
         (change)="persons.getCheckboxChange($event, 'genious')">
 
       <label for="genious">Genious</label>
